@@ -31,7 +31,10 @@ public class ItemSwap : MonoBehaviour
 
     void OnCollisionEnter(Collision coll) {
 
-        Swap();
+        if (coll.gameObject.tag == "Fracture")
+        {
+            Swap();
+        }
 
     }
 }
