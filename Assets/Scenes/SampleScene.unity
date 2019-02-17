@@ -326,6 +326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DistanceGrabHandLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 114619746081397232, guid: 0242aa8515b4bc947a945a5c6df83ee9,
+        type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 1862538401508492}
     - target: {fileID: 4669234126623968, guid: 0242aa8515b4bc947a945a5c6df83ee9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.075
@@ -378,11 +383,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114619746081397232, guid: 0242aa8515b4bc947a945a5c6df83ee9,
-        type: 3}
-      propertyPath: m_player
-      value: 
-      objectReference: {fileID: 1862538401508492}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0242aa8515b4bc947a945a5c6df83ee9, type: 3}
 --- !u!1001 &771249467
@@ -396,6 +396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DistanceGrabHandRight
       objectReference: {fileID: 0}
+    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
+        type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 1862538401508492}
     - target: {fileID: 4580194091363106, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0218
@@ -448,11 +453,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114956354361317420, guid: 6fae51a9f4170334e8639e8dbfc0a54b,
-        type: 3}
-      propertyPath: m_player
-      value: 
-      objectReference: {fileID: 1862538401508492}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fae51a9f4170334e8639e8dbfc0a54b, type: 3}
 --- !u!1 &1604762567
@@ -790,17 +790,17 @@ PrefabInstance:
     - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19
+      value: 0.18378
       objectReference: {fileID: 0}
     - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: 0.3466
       objectReference: {fileID: 0}
     - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.81
+      value: 2.8277
       objectReference: {fileID: 0}
     - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
         type: 3}
@@ -845,7 +845,17 @@ PrefabInstance:
     - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.66386
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.66386
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212691912312995065, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.66386
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1c39f6fd2f46477eb4c28ab9bd3c04a, type: 3}
@@ -2631,7 +2641,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033172920888060233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e7bb1b5b7d0b449b97ddf2b2caddaf7, type: 3}
   m_Name: 
@@ -2721,8 +2731,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033172920888060233}
   m_LocalRotation: {x: 0.05378666, y: 6.114372e-17, z: 0.99855244, w: 3.2934773e-18}
-  m_LocalPosition: {x: 0.19, y: 0.44, z: 2.81}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.18378, y: 0.3466, z: 2.8277}
+  m_LocalScale: {x: 0.66386, y: 0.66386, z: 0.66386}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
