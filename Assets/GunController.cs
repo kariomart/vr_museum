@@ -18,7 +18,7 @@ public class GunController : MonoBehaviour
     void FixedUpdate()
     {
         cd++;
-        if (Input.GetKeyDown(KeyCode.Space) || (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > .2f) && (cd > 60)) {
+        if (Input.GetKeyDown(KeyCode.Space) || (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > .2f) && (cd > 30)) {
             ShootBullet();
         }
 
