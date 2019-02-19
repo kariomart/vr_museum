@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Oculus/SampleFramework/Usage/DistanceGrabTest.unity
+    guid: 7d919a8c63f0c4508afb86941cf1e615
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 89e9709924e4d4ccaa2cf42fc4962ea9
   m_configObjects: {}

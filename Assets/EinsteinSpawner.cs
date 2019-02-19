@@ -17,6 +17,10 @@ public class EinsteinSpawner : MonoBehaviour
     {
 
         int rand = Random.Range(0,spawnChance);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
         
         if (rand == 1) {
             SpawnEinstein();
