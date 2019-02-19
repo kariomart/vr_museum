@@ -21,9 +21,10 @@ public class ItemSwap : MonoBehaviour
 
     public void Swap() {
 
-        Vector3 newPos = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
+        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         GameObject g = Instantiate(newItem, newPos, Quaternion.identity);
         //g.transform.localEulerAngles = this.transform.localEulerAngles;
+        g.transform.localScale = new Vector3(0.0906301f,0.0906301f,0.0906301f);
         g.transform.localEulerAngles = new Vector3(g.transform.eulerAngles.x, this.transform.eulerAngles.y+10, this.transform.eulerAngles.z);
         Destroy(this.gameObject);
 
@@ -31,7 +32,7 @@ public class ItemSwap : MonoBehaviour
 
     void OnCollisionEnter(Collision coll) {
 
-        if (coll.gameObject.tag == "Fracture")
+        if (coll.gameObject.tag == "Bullet")
         {
             Swap();
         }

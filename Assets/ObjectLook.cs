@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectLook : MonoBehaviour
 {
 
-    Camera cam;
+    public Camera cam;
     float defScale;
     ItemSwap itemSwap;
     Rigidbody rb;
@@ -15,7 +15,7 @@ public class ObjectLook : MonoBehaviour
     void Start()
     {
         defScale = transform.localScale.x;
-        cam = Camera.main;
+        //cam = Camera.main;
         itemSwap = GetComponent<ItemSwap>();
         rb = GetComponent<Rigidbody>();
     }
