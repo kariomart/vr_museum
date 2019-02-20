@@ -28,7 +28,7 @@ public class EinsteinSpawner : MonoBehaviour
     }
 
     void SpawnEinstein() {
-        GameObject e = Instantiate(einstein, new Vector3(Random.Range(-3,3), transform.position.y, 1.5f), Quaternion.identity);
+        GameObject e = Instantiate(einstein, new Vector3(Random.Range(-3,3), transform.position.y, Random.Range(-3,3)), Quaternion.identity);
         // Vector3 rotation = new Vector3(Random.Range(0,360),Random.Range(0,360),Random.Range(0,360));
         // float x = Mathf.MoveTowards(transform.eulerAngles.x, rotation.x,1);
         // float y = Mathf.MoveTowards(transform.eulerAngles.x, rotation.x,1);

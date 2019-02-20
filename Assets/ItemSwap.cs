@@ -6,17 +6,24 @@ public class ItemSwap : MonoBehaviour
 {
 
     public GameObject newItem;
+    Vector3 destination;
+    Vector3 dir;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        destination = GameObject.Find("OVRPlayerController").transform.position;
+        dir = destination - transform.position;
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(dir * Random.Range(15,30));
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        //transform.position = Vector3.MoveTowards(this.transform.position, destination, .1f);
+
     }
 
     public void Swap() {
