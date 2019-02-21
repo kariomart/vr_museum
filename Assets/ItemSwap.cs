@@ -9,14 +9,16 @@ public class ItemSwap : MonoBehaviour
     Vector3 destination;
     Vector3 dir;
     Rigidbody rb;
+    EinsteinSpawner spawner;
 
     // Start is called before the first frame update
     void Start()
     {
         destination = GameObject.Find("OVRPlayerController").transform.position;
+        spawner = GameObject.Find("EinsteinSpawner").GetComponent<EinsteinSpawner>();
         dir = destination - transform.position;
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(dir * Random.Range(15,30));
+        rb.AddForce(dir * Random.Range(5,20));
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class ItemSwap : MonoBehaviour
         GameObject g = Instantiate(newItem, newPos, Quaternion.identity);
         //g.transform.localEulerAngles = this.transform.localEulerAngles;
         g.transform.localScale = new Vector3(0.0906301f,0.0906301f,0.0906301f);
-        g.transform.localEulerAngles = new Vector3(g.transform.eulerAngles.x, this.transform.eulerAngles.y+10, this.transform.eulerAngles.z);
+      //  g.transform.localEulerAngles = new Vector3(g.transform.eulerAngles.x, this.transform.eulerAngles.y+10, this.transform.eulerAngles.z);
         Destroy(this.gameObject);
 
     }
@@ -42,7 +44,16 @@ public class ItemSwap : MonoBehaviour
         if (coll.gameObject.tag == "Bullet")
         {
             Swap();
+            spawner.score++;
         }
+    }
 
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            spawner.spawnChance = 100000000;
+            spawner.gameover = true;
+        }
     }
 }

@@ -9,10 +9,12 @@ public class GunController : MonoBehaviour
     public Transform shootpt;
     public int cd;
     public bool held;
+    public EinsteinSpawner spawner;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawner = GameObject.Find("EinsteinSpawner").GetComponent<EinsteinSpawner>();
     }
 
     // Update is called once per frame
@@ -26,9 +28,12 @@ public class GunController : MonoBehaviour
         if (transform.parent == null)
         {
             held = false;
+
         } else
         {
             held = true;
+            spawner.gamestarted = true;
+            //transform.localEulerAngles = new Vector3(68, -47, -70);
         }
 
 
@@ -40,9 +45,16 @@ public class GunController : MonoBehaviour
         float lTriggerVal = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
         Time.timeScale = Mathf.Clamp(Time.timeScale =  1 - lTriggerVal, .2f, 1);
         Time.fixedDeltaTime = Time.timeScale * 1 / 60f;
-        Debug.Log(Time.timeScale);
+        //Debug.Log(Time.timeScale);
 
 
+    }
+
+    private void LateUpdate()
+    {
+        if (held) { 
+            transform.localEulerAngles = new Vector3(68, -47, -70);
+        }
     }
 
     void ShootBullet() {
@@ -50,6 +62,7 @@ public class GunController : MonoBehaviour
         GameObject b = Instantiate(bullet, shootpt.position, Quaternion.identity);
         Rigidbody rb = b.GetComponent<Rigidbody>();
         float multiplier = 1 / Time.timeScale;
-        rb.AddForce(barrel.up*500);
+        //rb.AddForce(barrel.up*500);
+        rb.velocity = barrel.up*5*multiplier;
     }
 }
