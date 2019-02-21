@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
+    AudioSource source;
+    public AudioClip slowdownSFX;
+    public AudioClip bulletSFX;
     public GameObject bullet;
     public Transform barrel;
     public Transform shootpt;
     public int cd;
+    public int timeslowCD;
     public bool held;
     public EinsteinSpawner spawner;
+    bool timeslow;
+    float prevTime;
 
     // Start is called before the first frame update
     void Start()
     {
         spawner = GameObject.Find("EinsteinSpawner").GetComponent<EinsteinSpawner>();
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,7 +31,7 @@ public class GunController : MonoBehaviour
     }
     void FixedUpdate()
     {
-
+        float prevTime = Time.timeScale;
         if (transform.parent == null)
         {
             held = false;
@@ -41,10 +48,17 @@ public class GunController : MonoBehaviour
             ShootBullet();
         }
 
+        if(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch) > 0 && prevTime == 1) {
+            source.PlayOneShot(slowdownSFX);
+            timeslow = true;
+        }
+
         //Debug.Log(OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch));
         float lTriggerVal = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
         Time.timeScale = Mathf.Clamp(Time.timeScale =  1 - lTriggerVal, .2f, 1);
         Time.fixedDeltaTime = Time.timeScale * 1 / 60f;
+
+
         //Debug.Log(Time.timeScale);
 
 
@@ -58,6 +72,7 @@ public class GunController : MonoBehaviour
     }
 
     void ShootBullet() {
+        source.PlayOneShot(bulletSFX);
         cd = 0;
         GameObject b = Instantiate(bullet, shootpt.position, Quaternion.identity);
         Rigidbody rb = b.GetComponent<Rigidbody>();

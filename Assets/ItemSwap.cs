@@ -35,7 +35,6 @@ public class ItemSwap : MonoBehaviour
         //g.transform.localEulerAngles = this.transform.localEulerAngles;
         g.transform.localScale = new Vector3(0.0906301f,0.0906301f,0.0906301f);
       //  g.transform.localEulerAngles = new Vector3(g.transform.eulerAngles.x, this.transform.eulerAngles.y+10, this.transform.eulerAngles.z);
-        Destroy(this.gameObject);
 
     }
 

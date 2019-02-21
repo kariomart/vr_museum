@@ -5,6 +5,8 @@ using TMPro;
 
 public class EinsteinSpawner : MonoBehaviour
 {
+    AudioSource source;
+    public AudioClip spawnSFX;
     public int spawnChance;
     public GameObject einstein;
     public GameObject gunPrefab;
@@ -18,7 +20,7 @@ public class EinsteinSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
